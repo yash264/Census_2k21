@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+
+        .table{
+            height: 600px;
+            width: 780px;
+            background-color: rgba(122, 122, 119, 0.199);
+        }
+        .heading{
+            height:75px;
+            text-align: center;
+            color:white;
+            background-color: rgba(108, 167, 235, 0.856);
+        }
+        .content{
+            width: 240px;
+            text-align:left;
+            background-color: rgba(170, 230, 115, 0.801);
+            font-size: 15px;
+        }
+        .about{
+            height:50px;
+            background-color: rgba(58, 57, 56, 0.863);
+            text-align: center;
+        }
+        .articles{
+            text-align:left;
+            padding: 35px;
+            background-color: rgba(143, 235, 222, 0.199);
+        }
+        .personal{
+            padding:2px 20 px;
+            margin:5px 100px;
+        }
+        .communication{
+            padding:2px 20 px;
+            margin:5px 100px;
+        }
+        #security{
+            padding:2px 20 px;
+            margin:5px 100px;
+        }
+        .navigation{
+            background-color: rgba(116, 121, 118, 0.329);
+            text-align: center;
+            overflow:hidden;
+            text-align: left;
+        }
+        #submit{
+            font-size: 23px;
+            text-align: center;
+            padding: 0x;
+            background-color: rgb(233, 114, 77);
+            border-radius: 10px;
+            margin:4px 310px;
+        }
+
+        #submit:hover{
+            background-color: rgb(162, 92, 228);
+        }
+
+        #eligibility{
+            font-size: 15px;
+            text-align: left;
+            margin: 6px;
+            padding-left: 8px;
+        }
+        #home{
+            background-color: rgba(218, 86, 178, 0.664);
+            padding:2px 30px;
+            margin:2px 20px;
+            border-radius: 8px;
+        }
+        #about{
+            padding:2px 30px;
+            margin:2px 50px;
+            border-radius: 8px;
+            background-color: rgba(240, 240, 89, 0.651);
+        }
+        #contact{
+            padding:2px 30px;
+            margin:2px 50px;
+            border-radius: 8px;
+            background-color: rgba(115, 223, 121, 0.719);
+        }
+        #mission{
+            padding:2px 30px;
+            margin:2px 50px;
+            border-radius: 8px;
+            background-color: rgba(99, 224, 224, 0.726);
+        }
+        #home:hover{
+            background-color: rgba(171, 90, 238, 0.867);
+        }
+        #about:hover{
+            background-color:rgba(171, 90, 238, 0.767);
+        }
+        #contact:hover{
+            background-color:rgba(171, 90, 238, 0.767);
+        }
+        #mission:hover{
+            background-color:rgba(171, 90, 238, 0.767);
+        }
+        .formError{
+            color:rgba(250, 28, 28, 0.781);
+        }
+
+    </style>
+</head>
+<body>
+    <table border="0.9">
+        <tr>
+            <td class="heading" colspan=2>
+                <h1>Census of <b>INDIA</b> 2k21</h1>
+            </td>
+        </tr>
+        <tr>
+            <th class="navigation" colspan=2>
+                <section id="navigation">
+                    <button id="home" onclick="alert('You are now redirected to an external website . Please note that NIC cannot be held responsible for external website content & privacy policies .')">Home</button>
+                    <button id="about" onclick="about()">About</button>
+                    <button id="mission" onclick="mission()">Mission</button>
+                    <button id="contact" onclick="contact()">Contact</button>
+                </section>
+            </th>
+        </tr>
+        <tr>
+            <td class="content" rowspan=2>
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Enter your deatils carefully.</li>
+                    <li>All the details are mandatory to fill.</li>
+                    <li><b>Eligibility </b>-a person
+                        <ul id="eligibility">
+                            <li>Must be citizen of India.</li>
+                            <li>Should born on or after 15 Aug 1947.</li>
+                            <li>Should possess any of the identity card like aadhar card , ration card , pan card , driving licence ,
+                                etc as a proof of identity.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </td>
+            <td class="articles">
+                <form  id="form" onsubmit="return validateForm()" method="POST">
+                    <h2>Registration Form</h2>
+
+                    <div class="personal">
+                        <h3>Personal Details</h3>
+                        <div id="name">
+                        <label for="name">Name : </label>
+                        <input type="text" id="name" name="name" placeholder="Enter your Name" required><b><span class="formError"></span></b>
+                        </div>
+                        <br>
+                        <div id="date">
+                        <label for="dob">Date of Birth :</label>
+                        <input type="date" id="date" name="date" placeholder="Enter Date of Birth" required>
+                        </div>
+                        <br>
+                        <div id="gender">
+                        <label for="gender">Gender :</label>
+                        <select name="gender" id="gender" name="gender" required>
+                            <option value="">None</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        </div>
+                        <br>
+                        <div id="email">
+                        <label for="email" >E-Mail :</label>
+                        <input type="email" id="mail" name="email" placeholder="Enter E-Mail Id" required><b><span class="formError"></span></b>
+                        </div>
+                        <br>
+                        <div id="aadhar">
+                        <label for="aadhar" >Aadhar No. :</label>
+                        <input type="number" id="aadhar" name="aadhar" placeholder="Enter Aadhar Number" required><b><span class="formError"></span></b>
+                        </div>
+                        <br>
+                        <div id="tel">
+                        <label for="tel" >Phone No. :</label>
+                        <input type="tel" id="tel" name="tel" placeholder="Enter Phone Number" required><b><span class="formError"></span></b>
+                        </div>
+                        <br>
+                    </div>
+                    <hr>
+                    <div class="communication">
+                        <h3>Communication Details</h3>
+                        <div id="house">
+                        <label for="house" >House No. :</label>
+                        <input type="number" id="house" name="house" placeholder="Enter House Number" required><b><span class="formError"></span></b>
+                        </div>
+                        <br>
+                        <div id="locality">
+                        <label for="locality" >Locality :</label>
+                        <input type="text" id="locality" name="locality" placeholder="Enter Locality Name" required><b><span class="formError"></span></b>
+                        </div>
+                        <br>
+                        <div id="city">
+                        <label for="city-town">City/Town Name :</label>
+                        <input type="text" id="city" name="city" placeholder="Enter City/Town Name" required><b><span class="formError"></span></b>
+                        </div>
+                        <br>
+                        <div class="district">
+                        <label for="district">District :</label>
+                        <select type="select" id="district" name="district" required>
+                            <option value="">None</option>
+                            <option value="Gorakhpur">Gorakhpur</option>
+                            <option value="Lucknow">Lucknow</option>
+                            <option value="Ayodhya">Ayodhya</option>
+                            <option value="Varansi">Varansi</option>
+                            <option value="Prayagaj">Prayagraj</option>
+                            <option value="Graeter Noida">Greater Noida</option>
+                        </select>
+                        </div>
+                        <br>
+                        <div id="state">
+                        <label for="state">State :</label>
+                        <select type="select" id="state" name="state" required>
+                            <option value="">None</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Maharastra">Maharastra</option>
+                            <option value="New Delhi">New Delhi</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                        </select>
+                        </div>
+                        <br>
+                    </div>
+                    <hr>
+                    <div id="security">
+                        <h3>Security Details</h3>
+                        <div id="password">
+                            <label for="password">Password :</label>
+                            <input type="password" id="password" placeholder="Enter your password"><b><span class="formError"></span></b>
+                        </div>
+                        <br>
+                        <div id="conform_password">
+                            <label for="conform_password">Conform Password :</label>
+                            <input type="password" id="conform_password" placeholder="Conform your password"><b><span class="formError"></span></b>
+                        </div>
+                    </div>
+                    <br>
+                    <input type="submit" id="submit" >
+                </form>
+                
+            </td>
+        </tr>
+        
+        
+        <tr>   
+            <td class="about">
+                <h3>@ 2023 Designed , Developed and Hosted by National Informatics Center</h3>
+            </td>
+        </tr>
+    </table>
+    
+    <script>
+
+        function about()
+        {
+            var doc=document.open("text.html","replace");
+            var txt="<html><head><style>*{background-color: rgba(120, 180, 221, 0.208)}</style></head><body><br><h2>About the Scheme<h1><br><h4>A census is the procedure of systematically acquiring , recording and calculating population information about the members of a given population. This term is used mostly in connection with national population and housing censuses ; other common censuses include censuses of agriculture, traditional culture, business, supplies, and traffic censuses . The United Nations (UN) defines the essential features of population and housing censuses as individual enumeration, universality within a defined territory, simultaneity and defined periodicity , and recommends that population censuses be taken at least every ten years. UN recommendations also cover census topics to be collected, official definitions, classifications and other useful information to co-ordinate international practices .</h4></body></html>";
+            doc.write(txt);
+            doc.close();
+        }
+        function contact()
+        {
+            var doc=document.open("text.html","replace");
+            var txt="<html><head><style>*{background-color: rgba(115, 223, 121, 0.219)}</style></head><body><br><h3>Hi! Everyone I am Techkriti pursuing Bachelors of Technology in National Institute of Technology , Prayagraj . I have made this project to help the Government of India to conduct regular survey and make policies accordingly . This will help them in implementing different strategies to develop our country INDIA. </h3><br><h3>Email Id : techkriti@gmail.com</h3><br></body></html>";
+            doc.write(txt);
+            doc.close();
+        }
+        function mission()
+        {
+            var doc=document.open("text.html","replace");
+            var txt="<html><head><style>*{background-color: rgba(211, 168, 88, 0.137)}</style></head><body><br><h2>About the Mission<h2><br><h4>The Census Operations in India have been carried out in two phases: - i) Houselisting and Housing Census and ii) Population Enumeration. During Houselisting and Housing Census, all buildings, Census Houses and Households are identified and systematically listed in the relevant schedules. It provides comprehensive data on the conditions of human settlements, housing deficit and consequently the housing requirements to be taken care of in the formulation of housing policies. This will also provide a wide range of data/information on amenities and assets available to the Households. This would also provide the base for Population Enumeration by giving a more realistic idea of the population size of the Houselisting blocks, thereby ensuring the more practical carving of the blocks for Population Enumeration.</h4></body></html>";
+            doc.write(txt);
+            doc.close();
+        }
+        
+        function clearErrors(){
+            errors=document.getElementsByClassName("formError");
+            for(let item of errors)
+            {
+                item.innerHTML="";
+            }
+        };
+
+        function setError(id,error){
+            element=document.getElementById(id);
+            element.getElementsByClassName("formError")[0].innerHTML=error;
+        };
+
+        function validateForm(){
+            var returnvalue=true;
+            clearErrors();
+            var name=document.forms["form"]["name"].value;
+            console.log(name);
+            if(name.length<5){
+                setError("name"," * length of the name is too short");
+                returnvalue=false;
+            }
+            if(name.length>20){
+                setError("name"," * length of the name is too long");
+                returnvalue=false;
+            }
+            var email=document.forms["form"]["email"].value;
+            console.log(email);
+            if(email.charAt(email.length-4)!="."){
+                setError("email"," * Email Id entered is not valid");
+                returnvalue=false;
+            }
+
+            var tel=document.forms["form"]["tel"].value;
+            console.log(tel);
+            if(tel.length!==10){
+                setError("tel"," * Phone number should be of 10 digits");
+                returnvalue=false;
+            }
+            var aadhar=document.forms["form"]["aadhar"].value;
+            console.log(aadhar);
+            if(aadhar.length!==12){
+                setError("aadhar"," * Aadhar number must contain 12 digits");
+                returnvalue=false;
+            }
+            var house=document.forms["form"]["house"].value;
+            console.log(house);
+            if(house.length<2){
+                setError("house"," * House No. must contain atleast two digit");
+                returnvalue=false;
+            }
+            var locality=document.forms["form"]["locality"].value;
+            console.log(locality);
+            if(locality.length<10){
+                setError("locality"," * Name of locality is too small ");
+                returnvalue=false;
+            }
+            var city=document.forms["form"]["city"].value;
+            console.log(city);
+            if(city.length<=5){
+                setError("city"," * Name of city must be valid");
+                returnvalue=false;
+            }
+            var password=document.forms["form"]["password"].value;
+            console.log(password);
+            if(password.length<6){
+                setError("password"," * Password should be of atleast 6 character");
+                returnvalue=false;
+            }
+
+            var conform_password=document.forms["form"]["conform_password"].value;
+            console.log(conform_password);
+            if(conform_password!=password){
+                setError("conform_password"," * Password and Conform Password should be same");
+                returnvalue=false;
+            }
+            return returnvalue;
+        };
+
+        
+    </script>
+</body>
+</html>
