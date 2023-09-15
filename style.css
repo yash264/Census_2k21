@@ -1,0 +1,108 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+.table{
+    height: 600px;
+    width: 780px;
+    background-color: rgba(122, 122, 119, 0.199);
+}
+.heading{
+    height:75px;
+    text-align: center;
+    color:white;
+    background-color: rgba(108, 167, 235, 0.856);
+}
+.content{
+    width: 240px;
+    text-align:left;
+    background-color: rgba(170, 230, 115, 0.801);
+    font-size: 15px;
+}
+.about{
+    height:50px;
+    background-color: rgba(58, 57, 56, 0.863);
+    text-align: center;
+}
+.articles{
+    text-align:left;
+    padding: 35px;
+    background-color: rgba(143, 235, 222, 0.199);
+}
+.personal{
+    padding:2px 20 px;
+    margin:5px 100px;
+}
+.communication{
+    padding:2px 20 px;
+    margin:5px 100px;
+}
+#security{
+    padding:2px 20 px;
+    margin:5px 100px;
+}
+.navigation{
+    background-color: rgba(116, 121, 118, 0.329);
+    text-align: center;
+    overflow:hidden;
+    text-align: left;
+}
+#submit{
+    font-size: 23px;
+    text-align: center;
+    padding: 0x;
+    background-color: rgb(233, 114, 77);
+    border-radius: 10px;
+    margin:4px 310px;
+}
+
+#submit:hover{
+    background-color: rgb(162, 92, 228);
+}
+
+#eligibility{
+    font-size: 15px;
+    text-align: left;
+    margin: 6px;
+    padding-left: 8px;
+}
+#home{
+    background-color: rgba(218, 86, 178, 0.664);
+    padding:2px 30px;
+    margin:2px 20px;
+    border-radius: 8px;
+}
+#about{
+    padding:2px 30px;
+    margin:2px 50px;
+    border-radius: 8px;
+    background-color: rgba(240, 240, 89, 0.651);
+}
+#contact{
+    padding:2px 30px;
+    margin:2px 50px;
+    border-radius: 8px;
+    background-color: rgba(115, 223, 121, 0.719);
+}
+#mission{
+    padding:2px 30px;
+    margin:2px 50px;
+    border-radius: 8px;
+    background-color: rgba(99, 224, 224, 0.726);
+}
+#home:hover{
+    background-color: rgba(171, 90, 238, 0.867);
+}
+#about:hover{
+    background-color:rgba(171, 90, 238, 0.767);
+}
+#contact:hover{
+    background-color:rgba(171, 90, 238, 0.767);
+}
+#mission:hover{
+    background-color:rgba(171, 90, 238, 0.767);
+}
+.formError{
+    color:rgba(250, 28, 28, 0.781);
+}
